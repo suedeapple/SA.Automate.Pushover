@@ -12,7 +12,7 @@
   "LicenseTypes": [ "Free" ],
   "IssueTrackerUrl": "https://github.com/suedeapple/SA.Automate.Pushover/issues",
   "PackageType": "Package",
-  "Tags": [ "automate", "pushover", "notifications", "social media" ],
+  "Tags": [ "automate", "pushover", "notifications", "messaging" ],
   "Title": "SA.Automate.Pushover",
   "RelatedPackages": [
     {

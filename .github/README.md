@@ -6,6 +6,18 @@
 
 A Pushover connection type and action for [Umbraco Automate](https://github.com/umbraco/Umbraco.Automate). Push notifications to Pushover as part of an automation workflow.
 
+## What is Pushover?
+
+[Pushover](https://pushover.net/) is a simple notification service that lets apps send real-time alerts to mobile and desktop devices.
+
+## What can this be used for?
+
+This package is useful when you want instant operational alerts from Umbraco Automate workflows, for example:
+
+- **Umbraco Commerce new orders**: play a "kerching" sound when a new order is placed.
+- **Backoffice moderation tasks**: use a distinct alert sound when content is submitted for approval.
+- **General team notifications**: route different events to different users or groups with different sounds and priorities.
+
 ## Installation
 
 ```bash
