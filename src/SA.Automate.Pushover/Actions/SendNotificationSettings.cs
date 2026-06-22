@@ -21,13 +21,13 @@ public class SendNotificationSettings
     /// The sound played on the device when the notification arrives.
     /// Defaults to the Pushover default sound. See https://pushover.net/api#sounds for available values.
     /// </summary>
-    [Field(Label = "Sound", Description = "The sound to play on the device when the notification arrives. See https://pushover.net/api#sounds. Supports bindings.", SupportsBindings = true, SortOrder = 2)]
+    [Field(Label = "Sound", Description = "The sound to play on the device. See https://pushover.net/api#sounds. Supports bindings.", SupportsBindings = true, SortOrder = 2)]
     public string? Sound  { get; set; } = "pushover";
 
     /// <summary>
     /// An optional URL attached to the notification. Supports https://, mailto:, tel:, and other URI schemes.
     /// </summary>
-    [Field(Label = "URL",  Description = "An optional URL to be included with the notification that users can open directly from Pushover. Supports standard URLs (https://) as well as mailto:, tel:, and other URI schemes. Supports bindings" , SortOrder = 3, SupportsBindings = true)]
+    [Field(Label = "URL",  Description = "An optional URL to be included with the notification that users can open directly from Pushover. Supports standard URLs as well as mailto:, tel:, and other URI schemes. Supports bindings." , SortOrder = 3, SupportsBindings = true)]
     public string? Url { get; set; }
 
     /// <summary>An optional display title for the URL link. When omitted, the raw URL is shown.</summary>
