@@ -4,7 +4,7 @@
 [![NuGet](https://img.shields.io/nuget/vpre/SA.Automate.Pushover?color=0273B3)](https://www.nuget.org/packages/SA.Automate.Pushover)
 [![GitHub license](https://img.shields.io/github/license/suedeapple/SA.Automate.Pushover?color=8AB803)](https://github.com/suedeapple/SA.Automate.Pushover/blob/main/LICENSE)
 
-A Pushover connection type and action for [Umbraco Automate](https://github.com/umbraco/Umbraco.Automate). Push notifications to Pushover as part of an automation workflow.
+A Pushover connection type and action for [Umbraco Automate](https://github.com/umbraco/Umbraco.Automate). Send Push notifications to Pushover as part of an automation workflow.
 
 ## What is Pushover?
 
@@ -14,8 +14,8 @@ A Pushover connection type and action for [Umbraco Automate](https://github.com/
 
 This package is useful when you want instant operational alerts from Umbraco Automate workflows, for example:
 
-- **Umbraco Commerce new orders**: play a "kerching" sound when a new order is placed.
-- **Backoffice moderation tasks**: use a distinct alert sound when content is submitted for approval.
+- **Umbraco Commerce new orders**: play a "kerching" sound on your mobile device when a new order is placed.
+- **Backoffice moderation tasks**: use a distinct alert sound on your mobile device when content is submitted for approval.
 - **General team notifications**: route different events to different users or groups with different sounds and priorities.
 
 ## Installation
@@ -77,7 +77,7 @@ For advanced configuration, you can specify additional parameters for **Priority
 2. Enter your **User Key or Group Key**
 3. Click **Test connection** to verify.
 
-You can create mutiple connections, with different User Keys or Group Keys , to send notifications to different users or groups.
+**Tip:** You can create multiple connections, with different User Keys or Group Keys, to send notifications to different users or groups.
 
 ## Usage
 
@@ -87,9 +87,9 @@ Add the **Send Pushover Notification** action to any automation and select your 
 |---|---|
 | Title | The notification title. Supports `${ binding }` expressions. |
 | Message | The notification message. Supports `${ binding }` expressions. |
-| Sound | The sound to play when the notification is received. https://pushover.net/api#sounds |
-| URL | Optional URL appended to the notification. |
-| URL Title | Optional title for the URL. |
+| Sound | The sound to play when the notification is received. https://pushover.net/api#sounds Supports `${ binding }` expressions. |
+| URL | Optional URL appended to the notification. Supports `${ binding }` expressions. |
+| URL Title | Optional title for the URL. Supports `${ binding }` expressions. |
 | Priority | The priority of the notification. Defaults to `0`. |
 
 ## Compatibility
