@@ -8,7 +8,7 @@ A Pushover connection type and action for [Umbraco Automate](https://github.com/
 
 ## What is Pushover?
 
-[Pushover](https://pushover.net/) is a simple notification service that lets apps send real-time alerts to mobile and desktop devices.
+[Pushover.net](https://pushover.net/) is a simple notification service that lets apps send real-time alerts to mobile and desktop devices.
 
 ## What can this be used for?
 
