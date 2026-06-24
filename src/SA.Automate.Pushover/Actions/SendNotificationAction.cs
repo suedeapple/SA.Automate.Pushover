@@ -82,9 +82,11 @@ public class SendNotificationAction : ActionBase<SendNotificationSettings, SendN
                 requestContent["title"] = settings.Title;
             }
 
-            if (!string.IsNullOrWhiteSpace(settings.Sound))
+            // A custom uploaded sound name takes priority over the Sound dropdown when provided
+            var sound = !string.IsNullOrWhiteSpace(settings.CustomSound) ? settings.CustomSound : settings.Sound;
+            if (!string.IsNullOrWhiteSpace(sound))
             {
-                requestContent["sound"] = settings.Sound;
+                requestContent["sound"] = sound;
             }
 
             if (!string.IsNullOrWhiteSpace(settings.Url))
@@ -97,16 +99,23 @@ public class SendNotificationAction : ActionBase<SendNotificationSettings, SendN
                 requestContent["url_title"] = settings.UrlTitle;
             }
 
-            // Clamp priority to valid range once
-            var clampedPriority = Math.Clamp(settings.Priority, -2, 2);
-
-            if (clampedPriority != 0)
+            // Map the Priority dropdown label to the Pushover API's numeric priority scale
+            var priorityValue = settings.Priority switch
             {
-                requestContent["priority"] = clampedPriority.ToString();
+                "Min" => -2,
+                "Low" => -1,
+                "High" => 1,
+                "Max" => 2,
+                _ => 0
+            };
+
+            if (priorityValue != 0)
+            {
+                requestContent["priority"] = priorityValue.ToString();
             }
 
-            // For emergency priority (2), retry and expire are required by the Pushover API
-            if (clampedPriority == 2)
+            // For emergency priority (Max), retry and expire are required by the Pushover API
+            if (priorityValue == 2)
             {
                 // Use configured retry or fall back to default
                 var retryValue = _pushoverSettings.CurrentValue.Retry;

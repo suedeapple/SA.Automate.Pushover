@@ -61,8 +61,8 @@ For advanced configuration, you can specify additional parameters for **Priority
       "Providers": {
         "SA.Automate.Pushover": {
           "ApiToken": "your-access-token-here"
-          "Retry": "60", // Retry interval in seconds for Priority 2 notifications
-          "Expires": "1800" // Expiration time in seconds for Priority 2 notifications
+          "Retry": "60", // Retry interval in seconds for Priority 2 notifications : Default 60
+          "Expires": "1800" // Expiration time in seconds for Priority 2 notifications : Default 1800
         }
       }
     }
@@ -87,10 +87,11 @@ Add the **Send Pushover Notification** action to any automation and select your 
 |---|---|
 | Title | The notification title. Supports `${ binding }` expressions. |
 | Message | The notification message. Supports `${ binding }` expressions. |
-| Sound | The sound to play when the notification is received. https://pushover.net/api#sounds Supports `${ binding }` expressions. |
+| Sound | The sound to play when the notification is received, selected from a dropdown. https://pushover.net/api#sounds |
+| Custom Sound | Overrides Sound with a custom sound name uploaded to your Pushover account, if provided. Supports `${ binding }` expressions. |
 | URL | Optional URL appended to the notification. Supports `${ binding }` expressions. |
 | URL Title | Optional title for the URL. Supports `${ binding }` expressions. |
-| Priority | The priority of the notification. Defaults to `0`. |
+| Priority | The priority of the notification: `Min`, `Low`, `Default`, `High`, or `Max`. Defaults to `Default`. |
 
 ## Compatibility
 
@@ -102,4 +103,4 @@ Add the **Send Pushover Notification** action to any automation and select your 
 
 - [Source code](https://github.com/suedeapple/SA.Automate.Pushover)
 - [Report an issue](https://github.com/suedeapple/SA.Automate.Pushover/issues)
-- [Pushover.net](https://pushover.net/)
+- [Pushover.net documentation](https://pushover.net/)
